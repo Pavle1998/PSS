@@ -1,0 +1,1488 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header{ /* bila je * */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+}
+
+body{
+    background-color: rgb(57, 96, 180);
+    
+    /*min-height: 200vh;*/
+}
+
+header{
+    position: fixed;
+    top:0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: 0.6s;
+    padding: 40px 100px;
+    z-index: 100000;
+}
+
+header.sticky{
+    padding: 5px 100px;
+    background: #fff;
+}
+
+header .logo{
+    position: relative;
+    font-weight:  700;
+    color: #fff;
+    text-decoration: none;
+    font-size:  2em;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transition: 0.6s;
+}
+
+header > ul {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+header ul li {
+    position: relative;
+    list-style: none;
+    font-weight: lighter;
+}
+
+.text{
+    position: relative;
+    margin: 0 15px;
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    letter-spacing: 2px;
+    font-weight: 500px;
+    transition: 0.6s;
+}
+
+header.sticky .text:hover{
+    /*background-color: rgb(153, 153, 153);*/
+    color: rgb(185, 185, 185);
+}
+
+.text:hover
+{
+    /*background-color: rgb(153, 153, 153);*/
+    color: rgb(173, 173, 173);
+}
+.banner{
+    position: relative; /* bilo je na relative*/
+    width: 100%;
+    /*min-height: 100vh; zacas samo*/ 
+    /*background: url(bg.jpg);*/
+    background-size: cover;
+}
+
+header.sticky .logo{
+    color: rgb(57, 96, 180);
+}
+
+header.sticky ul li span  {
+    color: rgb(57, 96, 180);
+}
+
+span{
+    display: inline-block;/*da uklonimo crvenu liniju ispod span delova*/
+}
+
+.ddmenu{
+    position: absolute;
+    top: 70px;
+    left: 0;
+    display: none;
+
+  
+}
+
+.ddmenu ul li a{
+    width: 180px;
+    text-align: left;
+    padding: 20px 210px;
+
+}
+
+ul li a.aparent.active + .ddmenu{
+    display: block;
+}
+
+header.sticky ul li a.aparent.active + .ddmenu{
+    background-color: white;
+    width: 205px;
+    display: block;
+}
+
+header .ddmenu:before{
+    content: "";
+    position: absolute;
+    top:-40px;
+    left: 7%;
+    transform: translateX(-50%);
+    z-index: 1;
+    border: 15px solid;
+    border-color: transparent transparent white transparent;
+
+}
+
+header.sticky .ddmenu:before{
+    content: "";
+    position: absolute;
+    top:-40px;
+    left: 14.5%;
+    transform: translateX(-50%);
+    z-index: 1;
+    border: 15px solid;
+    border-color: transparent transparent white transparent;
+}
+
+
+
+
+
+
+.dd_submenu{
+    position: absolute;
+    top: 0;
+    right: 45%;
+    width: 105%;
+    display: none;
+}
+
+header ul li  .ddmenua.active +  .dd_submenu{
+    display: block;
+}
+header.sticky  .ddmenua.active +  .dd_submenu{
+    display: block;
+    background-color: white;
+    top: 0;
+    left: -220px;
+    width: 180px;
+}
+header.sticky .dd_submenu:before{
+    content: "";
+    position: absolute;
+    top:-40px;
+    left:108%;
+    transform: translateY(+170%);
+    z-index: 1;
+    border: 15px solid;
+    border-color: transparent transparent transparent rgb(255, 255, 255);
+}
+
+header .dd_submenu:before{
+    content: "";
+    position: absolute;
+    top:-40px;
+    left:41.5%;
+    transform: translateY(+170%);
+    z-index: 1;
+    border: 15px solid;
+    border-color: transparent transparent transparent white;
+}
+
+.linija{
+    color:red;
+    margin: 120px 50px 80px 50px;
+    border: 1px solid white;
+}
+
+.prikaz{
+    min-height: 500px;
+    margin: 0px 50px 80px 50px;
+
+    display: flex;
+    
+}
+
+/* FUTER */
+footer{
+    bottom: 0;
+    position: static;
+    background-color: rgb(255,255,255);
+    min-height: 200px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    flex:1 1 auto;
+    justify-content: space-between;
+}
+
+.levi .desni{
+    display: flex;
+    flex:1 1 auto;
+    flex-direction: column;
+}
+
+.levi{
+    font-family: 'Poppins', sans-serif;
+    font-weight:  700;
+    color: rgb(57, 96, 180);
+    text-decoration: none;
+    font-size:  1.05em;
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 auto;    
+}
+
+.lokacija, .telefon, .gmail, .web{
+    display: flex;
+    flex-wrap: wrap;
+    flex-grow: 1;
+    flex-shrink: 1;
+    height: 70px;
+    max-height: 200px;
+    /*width: 420px ;*/
+    display: flex;
+    align-items: center;
+    padding-left: 40px;
+}
+
+.desni{
+    font-family: 'Poppins', sans-serif;
+    font-weight:  700;
+    color: rgb(57, 96, 180);
+    text-decoration: none;
+    font-size:  1.05em;
+    right: 0%;
+    min-width: 350px;
+   
+
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    flex: 1 1 auto;  
+    
+}
+
+.info{
+    
+    text-align:center;
+    font-size: 180%;
+    min-height: 50px;
+
+    display: flex;
+    /*flex-direction: column;*/
+    align-self: center;
+    align-items: center;
+    flex-wrap: wrap;
+    flex: 1 1 auto;
+
+}
+
+.podaci{
+    display: flex;
+    flex-direction: column;
+}
+
+.podaci1{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    flex: 1 1 auto;
+    
+    justify-content:space-between;
+
+    min-width: 350px;
+    margin-left: 101px;
+    margin-right: 101px;
+}
+
+.ime, .email{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    flex: 0 1 auto;
+
+}
+
+.imeInput{
+    min-width: 100px;
+    height: 20px;
+    border-radius: 5px;
+    border-style: ridge;
+
+    display: flex;
+    flex-wrap: wrap;
+    flex: 0 1 auto;
+}
+.emailInput
+{
+    min-width: 250px;
+    height: 20px;
+    border-radius: 5px;
+    border-style: ridge;
+
+    display: flex;
+    flex-wrap: wrap;
+    flex: 0 1 auto;
+}
+
+
+.naslovporuke{
+    display: flex;
+    flex-direction: column;
+    margin-top: 3px;
+    margin-left: 101px;
+    margin-right: 101px;
+
+    flex-wrap: wrap;
+    flex: 0 1 auto;
+}
+.naslovporukeInput{
+    min-width: 300px;
+    border-radius: 5px;
+    border-style: ridge;
+
+    display: flex;
+    flex-wrap: wrap;
+    flex: 0 1 auto;
+}
+
+.poruka{
+    display: flex;
+    flex-direction: column;
+    margin-top: 3px;
+    margin-left: 101px;
+    margin-right: 101px;
+
+    flex-wrap: wrap;
+    flex: 0 1 auto;
+
+}
+.porukaInput{
+    min-width: 300px;
+    min-height: 45px;
+    border-radius: 5px;
+    border-style: ridge;
+
+    display: flex;
+    flex-wrap: wrap;
+    flex: 0 1 auto;
+}
+
+.btnSend{
+    height: 35px;
+    margin-bottom: 3px;
+    min-width: 200px;
+    margin-top: 4px;
+    
+   
+
+    font-family: 'Poppins', sans-serif;
+    font-weight:  700;
+    background-color: rgb(57, 96, 180);
+    color: white;
+    text-decoration: none;
+    font-size:  1.05em;
+    border-radius: 12px;
+    border-style: hidden;
+
+    align-self: center;
+    flex-wrap: wrap;
+    flex: 0 1 auto;
+}
+
+
+
+
+
+.prikaz{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    flex: 1 1 auto;
+}
+
+.glavniKontejner{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    flex: 1 0 auto;
+
+    justify-content: space-around;
+    align-items: center;
+
+    min-height: 350px;
+
+    margin-bottom: 100px;
+}
+
+.leviPrikaz, .desniPrikaz{
+    
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    flex: 0 1 auto;
+
+    max-width: 800px;
+}
+
+.leviPrikaz{
+    border: 3px solid white;
+    border-radius: 15px 50px 30px;
+    
+}
+
+.lp1, .lp2, .lp3{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    flex: 0 1 auto;
+
+    font-family: 'Poppins', sans-serif;
+    font-weight:  700;
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    font-size:  1.5em;
+    right: 0%;
+    min-width: 250px;
+}
+
+
+.lp1, .lp2, .lp3, .searchDugme{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    flex: 0 1 auto;
+   /* margin-top: 30px;*/
+    margin: 30px 30px 0px 30px;
+}
+
+.lp1, .lp2, .lp3{
+    margin-top: 20px;
+}
+
+.searchDugme{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    flex:0  1 auto;
+    
+    width: 200px;
+    height: 30px;
+
+    font-family: 'Poppins', sans-serif;
+    font-weight:  700;
+    color: rgb(57, 96, 180);
+
+    text-decoration: none;
+    font-size:  1.3em;
+
+    align-self: center;
+    border-radius: 12px;
+    border-style: hidden;
+    margin-bottom: 25px;
+
+    background-color: white;
+    box-shadow: inset 0 0 0 0 rgb(57, 96, 180);
+    transition: ease-out 0.4s;
+    outline: none;
+
+    border: 2px solid white; 
+}
+
+
+.searchDugme:hover{
+box-shadow: inset 300px 0 0 0 rgb(57, 96, 180);
+
+cursor: pointer;
+color: white;
+}
+
+.serijaSelect, .epizodaSelect, .sezonaSelect{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    
+    margin-top: 2px;
+    min-width: 85px;
+    width:fit-content;
+
+    font-family: 'Poppins', sans-serif;
+    font-size:  0.7em;
+    border-radius: 4px;
+    border-style: hidden;
+
+    background-color: white;
+}
+
+.dp1, .dp2, .dp3, .dp4{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    flex: 0 1 auto;
+
+    color: white;
+    font-family: 'Poppins', sans-serif;
+
+    margin-top: 16px;
+    margin-bottom: 20px;
+    margin-left: 30px;
+    margin-right: 30px;
+}
+
+
+.dp1{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    flex: 0 1 auto;
+
+    align-items: flex-end;
+    justify-content: space-between;
+}
+.nazivSerijeLabel{
+    font-weight:  1000;
+    font-size:  2.5em;
+}
+.brojSezonaLabel{
+    font-weight:  200;
+    font-size:  1.2em;
+}
+.ocenaLabel{
+    font-weight:  600;
+    font-size:  1.75em;  
+    margin-top: 8px;
+    margin-bottom: 8px;
+    margin-left: 3px;
+    margin-right: 4px;
+}
+
+
+.dp2{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    flex: 0 1 auto;
+
+    
+    justify-content: space-between;
+}
+.nazivEpizode, .trajanje{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    flex: 0 1 auto;
+    
+    align-items: center;
+}
+.nazivEpizodeLabel{
+    margin-left: 4px;
+    font-weight:  600;
+    font-size:  large; 
+}
+.trajanjeLable{
+    margin-left: 4px;
+    font-weight:  600;
+    font-size:  large; 
+}
+
+
+
+.opisEpizodeLabel{
+    font-weight: bold;
+}
+.opisLabela{
+    margin-bottom: 3px;
+
+}
+
+.dp3{
+    justify-content: space-between;
+}
+
+.zanrLabel{
+    font-weight:  600;
+    font-size:  large;
+}
+.reditelj{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    flex: 0 1 auto;
+    align-items: baseline;
+}
+.director{
+    margin-right: 4px;
+}
+
+.rediteljImeLabel, .rediteljPrezimeLabel{
+    font-weight:  600;
+    font-size:  large; 
+}
+
+.rediteljImeLabel{
+    margin-right: 4px;
+}
+
+
+
+
+
+.noviPrikaz{
+    min-height: 400px;
+    margin: 0px 50px 80px 50px;
+
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+.noviPrikazL{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    padding: 2%;
+    
+    min-width: 300px;
+    border: 3px solid white;
+    border-radius: 15px 80px 30px;
+}
+
+.label1, .bl0{
+    margin-bottom: 70px;
+}
+
+.label1{
+    font-family: 'Poppins', sans-serif;
+    font-size: 2.2em;
+    font-weight: 600;
+    color: white;
+    border-radius: 4px;
+    border-style: hidden;
+}
+
+.bl0, .bl1, .bl2, .bl3{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+.bl1, .bl2, .bl3{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    margin-bottom: 10px;
+}
+.label2, .label3, .label4{
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.3em;
+    font-weight: 600;
+    color: white;
+}
+
+.input1, .input2, .input3{
+    font-family: 'Poppins', sans-serif;
+    font-size: 1em;
+    letter-spacing: normal;
+    width: 200px;
+    background-color: white;
+
+    border-radius: 5px;
+    text-align: center;
+    font-size: large;
+    border-style: hidden;
+    margin-top: 2px;
+}
+.dugmeAdd{
+    font-family: 'Poppins', sans-serif;
+    font-size: 2em;
+    font-weight: 600;
+    color: rgb(57, 96, 180);
+    border-radius: 12px;
+    border-style: hidden;
+    margin-top: 15px;
+}
+
+
+.noviPrikazD{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    padding: 2%;
+    
+    align-self: center;
+    height: 300px;
+    min-width: 300px;
+    /*border: 2px solid white;
+    border-radius: 15px 80px 30px;*/
+}
+.bd0, .bd1, .bd2{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    font-family: 'Poppins', sans-serif;
+    color: white;
+    margin-bottom: 20px;
+    align-items: center;
+}
+
+.label6, .label8, .label10{
+    margin-left: 5px;
+    font-size: 1.3em;
+    font-weight: 600;
+}
+
+.label5, .label7, .label9{
+    font-size: 1.1em;
+    font-weight: 200;
+}
+
+.label11{
+    margin-top: 40px;
+    align-self: center;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.5em;
+    font-weight: 600;
+    color: rgb(16, 161, 16);
+}
+
+
+
+.noviPrikaz2{
+    min-height: 400px;
+    margin: 0px 50px 80px 50px;
+    min-width: 300px;
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+
+}
+
+.noviPrikaz2L{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    min-height: 200px;
+    width: 500px;
+
+    border: 3px solid white;
+    border-radius: 15px 80px 30px;
+}
+.label12{
+    align-self: center;
+    font-family: 'Poppins', sans-serif;
+    font-size: 2.2em;
+    font-weight: 600;
+    color: white;
+    border-radius: 4px;
+    border-style: hidden;
+    margin-top: 30px;
+}
+.np2l0{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    margin-top: 80px;
+    align-self: center;
+}
+.label13{
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.6em;
+    font-weight: 400;
+    color: white;
+}
+.selektIS{
+    min-width: 255px;
+    height: 30px;
+    width: fit-content;
+    font-size: 17px;
+    text-align: center;
+
+
+    font-family: 'Poppins', sans-serif;
+    font-size:  1.2em;
+    border-radius: 4px;
+    border-style: hidden;
+
+    background-color: white;
+}
+.deleteDugme{
+    width: 300px;
+    height: 50px;
+    align-self: center;
+    font-family: 'Poppins', sans-serif;
+    font-size: 2em;
+    font-weight: 600;
+    color: rgb(57, 96, 180);
+    border-radius: 12px;
+    border-style: hidden;
+    margin-top: 100px;
+}
+.noviPrikaz2D{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+
+    align-self: center;
+    justify-content: center;
+
+    height: 100px;
+    min-width: 300px;
+}
+.np2d0{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-self: center;
+    align-items: flex-start;
+    margin-left: 30px;
+    margin-right: 30px;
+}
+.label14, .label15{
+    font-family: 'Poppins', sans-serif;
+    align-self: center;
+    color: white;
+}
+
+.label14{
+    font-size: 1.5em;
+    font-weight: 600;
+    margin-right: 5px;
+    align-self: flex-start;
+}
+
+.label15{
+    font-size: 1.5em;
+    font-weight: 600;
+    color: rgb(16, 161, 16);
+}
+
+
+
+
+
+.noviPrikaz3{
+    min-height: 400px;
+    margin: 0px 50px 80px 50px;
+    min-width: 300px;
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+
+}
+
+.noviPrikaz3L{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    min-height: 200px;
+    width: 500px;
+
+    border: 3px solid white;
+    border-radius: 15px 80px 30px;
+} 
+
+
+.np3l0, .np3l1, .dugmeSave{
+    margin-top: 40px;
+}
+
+.label16{
+    margin-top: 10px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 2.2em;
+    font-weight: 600;
+    color: white;
+    border-radius: 4px;
+    border-style: hidden;
+    align-self: center;
+}
+
+.np3l0{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-self: center;
+}
+
+.label17{
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.3em;
+    font-weight: 600;
+    color: white;
+}
+
+.selektSM{
+    min-width: 292px;
+    height: 30px;
+    width: fit-content;
+    font-size: 17px;
+    text-align: center;
+    font-size: 1.4em;
+    background-color: white;
+    border-radius: 5px;
+    border-style: hidden;
+    margin-top: 1px;
+
+}
+
+.noviPrikaz3D{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+
+    align-self: center;
+    justify-content: center;
+
+    height: 100px;
+    min-width: 300px;
+   
+}
+.np3d0{
+    min-width: 350px;
+    text-align: center;
+    font-size: 1.2em;
+    font-weight: 800;
+    font-family: 'Poppins', sans-serif;
+    color: rgb(16, 161, 16);
+}
+.np3l1{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-top: 30px;
+    justify-content: space-around;
+}
+
+.np3l11, .np3l12, .np3l13{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.label18, .label19, .label20{
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.1em;
+    font-weight: 500;
+    color: white;
+    align-self: center;
+}
+
+.input01, .input02, .input03{
+    border-radius: 5px;
+    text-align: center;
+    font-size: large;
+    border-style: hidden;
+    margin-top: 2px;
+}
+
+.np3l13{
+    margin-top: 10px;
+}
+
+.dugmeSave{
+    
+    width: 300px;
+    height: 50px;
+    align-self: center;
+    font-family: 'Poppins', sans-serif;
+    font-size: 2em;
+    font-weight: 600;
+    color: rgb(57, 96, 180);
+    border-radius: 12px;
+    border-style: hidden;
+    margin-top: 40px;
+}
+
+
+
+
+/* ADD SEASONS */
+
+
+/*LEVI DEO*/
+.noviPrikaz4{
+    min-height: 400px;
+    margin: 0px 50px 80px 50px;
+    min-width: 300px;
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+.np4d{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    min-height: 200px;
+    width: 540px;
+}
+.np4l{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    min-height: 200px;
+    width: 540px;
+
+    border: 3px solid white;
+    border-radius: 15px 80px 30px;
+}
+.label21{
+    margin-top: 20px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 2.2em;
+    font-weight: 600;
+    color: white;
+    border-radius: 4px;
+    border-style: hidden;
+    align-self: center;
+}
+.np4l0, .np4l1, .dugmeAdd1{
+    margin-top: 30px;
+}
+
+.np4l0{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-self: center;
+    align-items: center;
+}
+.label22{
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.4em;
+    font-weight: 600;
+    color: white;
+}
+.selectSeriesnp4l{
+    min-width: 200px;
+    height: 30px;
+    width: fit-content;
+    font-size: 17px;
+    text-align: center;
+    background-color: white;
+    border-radius: 5px;
+    border-style: hidden;
+    margin-top: 1px;
+    font-size: 1.4em;
+
+}
+.np4l1{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    justify-content: space-around;
+}
+.np4l1l, .np4l1d{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+.label23, .label24, .label25, .label26{
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.2em;
+    font-weight: 600;
+    color: white;
+}
+.input04, .input05, .input06, .input07{
+    margin-bottom: 7px;
+    border-radius: 5px;
+    text-align: center;
+    font-size: large;
+    border-style: hidden;
+    margin-top: 2px;
+    background-color: white;
+}
+.dugmeAdd1{ 
+    font-family: 'Poppins', sans-serif;
+    font-size: 2em;
+    font-weight: 600;
+    color: rgb(57, 96, 180);
+    border-radius: 12px;
+    border-style: hidden;
+    margin-top: 50px;
+    align-self: center;
+    width: 280px;
+}
+/*DESNI DEO*/
+.np4d{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    padding: 2%;
+    
+    align-self: center;
+    height: 300px;
+    min-width: 300px;
+}
+.np4d0, .np4d1, .np4d2, .np4d3{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    font-family: 'Poppins', sans-serif;
+    color: white;
+    margin-bottom: 20px;
+    align-items: center;
+}
+
+.label32, .label33, .label34, .label35{
+    margin-left: 5px;
+    font-size: 1.3em;
+    font-weight: 600;
+}
+
+.label27, .label28, .labe29, .label30{
+    font-size: 1.1em;
+    font-weight: 200;
+}
+
+.label31{
+    margin-top: 20px;
+    align-self: center;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.25em;
+    font-weight: 600;
+    color: rgb(16, 161, 16);
+}
+
+
+/*DELETE SEASON*/
+.noviPrikaz5{
+    min-height: 400px;
+    margin: 0px 50px 80px 50px;
+    min-width: 300px;
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+/*LEVI DEO*/
+.np5l{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    min-height: 200px;
+    width: 500px;
+
+    border: 3px solid white;
+    border-radius: 15px 80px 30px;
+}
+.label36{
+    align-self: center;
+    font-family: 'Poppins', sans-serif;
+    font-size: 2.2em;
+    font-weight: 600;
+    color: white;
+    border-radius: 4px;
+    border-style: hidden;
+    margin-top: 40px;
+}
+.np5l0{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    margin-top: 80px;
+    align-self: center;
+    align-items: center;
+}
+.label37{
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.6em;
+    font-weight: 400;
+    color: white;
+}
+.selectSeriesnp5{
+    min-width: 267px;
+    height: 30px;
+    width: fit-content;
+    text-align: center;
+    background-color: white;
+    border-radius: 5px;
+    border-style: hidden;
+    font-size: 1.2em;
+}
+.label38{
+    margin-top: 10px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.6em;
+    font-weight: 400;
+    color: white;
+}
+.selectSeasonnp5{
+    min-width: 267px;
+    height: 30px;
+    width: fit-content;
+    font-size: 1.2em;
+    text-align: center;
+    background-color: white;
+    border-radius: 5px;
+    border-style: hidden;
+}
+.dugmeDelete1{
+    width: 300px;
+    height: 50px;
+    align-self: center;
+    font-family: 'Poppins', sans-serif;
+    font-size: 2em;
+    font-weight: 600;
+    color: rgb(57, 96, 180);
+    border-radius: 12px;
+    border-style: hidden;
+    margin-top: 100px;
+    background-color: white;
+    margin-bottom: 40px;
+}
+/*DESNI DEO*/
+.np5d{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+
+    align-self: center;
+    justify-content: center;
+
+    height: 100px;
+    min-width: 300px;
+   
+}
+.np5d0{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-self: center;
+    align-items: flex-start;
+    margin-left: 30px;
+    margin-right: 30px;
+}
+.label39, .label40{
+    font-family: 'Poppins', sans-serif;
+    align-self: center;
+    color: white;
+}
+
+.label39{
+    font-size: 1.5em;
+    font-weight: 600;
+    margin-right: 9px;
+    align-self: flex-start;
+}
+
+.label40{
+    font-size: 1.3em;
+    font-weight: 600;
+    color: rgb(16, 161, 16);
+}
+
+
+/*SEASON MODIFY*/
+.noviPrikaz6{
+    min-height: 450px;
+    margin: 0px 50px 80px 50px;
+    min-width: 300px;
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+.np6l{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    min-height: 200px;
+    width: 500px;
+
+    border: 3px solid white;
+    border-radius: 15px 80px 30px;
+}
+.label41{
+    margin-top: 15px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 2.2em;
+    font-weight: 600;
+    color: white;
+    border-radius: 4px;
+    border-style: hidden;
+    align-self: center;
+}
+.np6l0{
+    margin-top: 25px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-self: center;
+}
+.label410, .label411{
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.3em;
+    font-weight: 600;
+    color: white;
+}
+
+.selektSeriesnp6, .selektSeasonnp6{
+    min-width: 292px;
+    height: 30px;
+    width: fit-content;
+    font-size: 1.3em;
+    text-align: center;
+    background-color: white;
+    border-radius: 5px;
+    border-style: hidden;
+    margin-top: 1px;
+}
+.np6l1{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-top: 30px;
+    justify-content: space-around;
+    margin-top: 50px;
+}
+.np6l11, .np6l12, .np6l13, .np6l14{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+.label42, .label43, .label44, .label45{
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.1em;
+    font-weight: 500;
+    color: white;
+    align-self: center;
+}
+    
+.input08, .input09, .input010, .input011{
+    border-radius: 5px;
+    text-align: center;
+    font-size: large;
+    border-style: hidden;
+    margin-top: 1px;
+}
+    
+.np6l13, .np6l14{
+   margin-top: 10px;
+}
+    
+.dugmeSave1{
+    width: 300px;
+    height: 50px;
+    align-self: center;
+    font-family: 'Poppins', sans-serif;
+    font-size: 2em;
+    font-weight: 600;
+    color: rgb(57, 96, 180);
+    border-radius: 12px;
+    border-style: hidden;
+    margin-top: 40px;
+    background-color: white;
+    box-shadow: inset 0 0 0 0 rgb(57, 96, 180);
+    transition: ease-out 0.4s;
+    outline: none;
+
+    border: 2px solid white;
+}
+
+.dugmeSave1:hover{
+    box-shadow: inset 300px 0 0 0 rgb(57, 96, 180);
+    
+    cursor: pointer;
+    color: white;
+}
+
+.np6d{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+
+    align-self: center;
+    justify-content: center;
+
+    height: 100px;
+    min-width: 300px;
+   
+}
+.np6d0{
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+    font-size: 1.3em;
+    font-weight: 800;
+    font-family: 'Poppins', sans-serif;
+    color: rgb(16, 161, 16);
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.dugmeAdd{
+    background-color: white;
+    box-shadow: inset 0 0 0 0 rgb(57, 96, 180);
+    transition: ease-out 0.4s;
+    outline: none;
+    
+    border: 2px solid white; 
+}
+.dugmeAdd:hover{
+    box-shadow: inset 410px 0 0 0 rgb(57, 96, 180);
+    
+    cursor: pointer;
+    color: white;
+}
+
+.deleteDugme, .dugmeSave, .dugmeSave1, .dugmeAdd1, .dugmeDelete1 {
+    background-color: white;
+    box-shadow: inset 0 0 0 0 rgb(57, 96, 180);
+    transition: ease-out 0.4s;
+    outline: none;
+    
+    border: 2px solid white; 
+}
+    
+    
+ .dugmeSave:hover, .deleteDugme:hover, .dugmeSave:hover, .dugmeSave1:hover, .dugmeAdd1:hover, .dugmeDelete1:hover{
+    box-shadow: inset 300px 0 0 0 rgb(57, 96, 180);
+    
+    cursor: pointer;
+    color: white;
+}
+    
+.logo:hover{
+    cursor: pointer;
+       
+}
+
+.btnSend{
+    box-shadow: inset 0 0 0 0 rgb(57, 96, 180);
+    transition: ease-out 0.4s;
+    border: 2px solid white;
+    outline: none;
+    
+    
+}
+.btnSend:hover{
+    box-shadow: inset 200px 0 0 0 white;
+    border: 2px solid rgb(57, 96, 180);
+    cursor: pointer;
+    color: rgb(57, 96, 180);
+}
+
+
